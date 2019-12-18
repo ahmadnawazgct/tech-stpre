@@ -28,7 +28,7 @@ class ProductProvider extends React.Component {
     }
      setProducts = (products) => {
         let storeProducts = products.map(item=> {
-            const { id } = item.sys,
+            const { id } = item.sys;
             const product ={id, ...item.fields }
             return product;
         })
@@ -53,8 +53,11 @@ class ProductProvider extends React.Component {
     addTotals=(id)=> {
         console.log(id);
     };
+    addToCart=id=>{
+        console.log(`add to cart ${id}`);
+    }
     setSingleProduct=(id) => {
-        console.log(id);
+        console.log(`set single product ${id}`);
     }
     syncStorage=()=> {};
     handleSidebar =()=> {
@@ -77,6 +80,8 @@ class ProductProvider extends React.Component {
             handleCart:this.handleCart,
             closeCart:this.closeCart,
             openCart:this.openCart,
+            addToCart:this.addToCart,
+            setSingleProduct:this.setSingleProduct
             
 
         }}>
